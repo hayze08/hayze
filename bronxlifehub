@@ -1,4 +1,4 @@
--- bl hub by hayze dont steal
+-- bl hub by hayze dont steal 
 
 -- Load Rayfield Library
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
@@ -53,25 +53,33 @@ local TeleportCategory = Window:CreateTab("Teleport", 4483362458) -- Replace wit
 
 -- Add the "TP Mpr turf" toggle button under 'Teleport'
 local toggleState = false -- Track toggle state (enabled/disabled)
-local teleportScript = nil -- Variable to store the teleport script
+local teleportScript -- Variable to store the teleportation script
 
+-- Function to execute the teleportation script
+local function enableTeleport()
+    teleportScript = loadstring(game:HttpGet("https://pastebin.com/raw/MnWT8ffi")()
+
+-- Function to disable the teleportation script
+local function disableTeleport()
+    if teleportScript then
+        -- Since the script from pastebin doesn't have a direct way to "stop", we can attempt to disconnect events or reset things here
+        -- For now, we will just clear the variable as a placeholder for stopping logic
+        teleportScript = nil
+    end
+end
+
+-- Add toggle to enable/disable teleportation
 TeleportCategory:CreateToggle({
     Name = "TP Mpr turf",
     CurrentValue = toggleState,
     Callback = function(State)
         toggleState = State
         if toggleState then
-            -- Enable Teleport by executing the loadstring
-            teleportScript = loadstring(game:HttpGet("https://pastebin.com/raw/qS5yVZaH"))()
+            -- Enable teleportation
+            enableTeleport()
         else
-            -- Disable Teleport by stopping the script if it's active
-            if teleportScript then
-                -- If there's a way to stop the teleportation, do it here
-                -- For example, you can disconnect or stop certain parts of the logic within the script.
-                -- For now, this example doesn't have specific termination logic,
-                -- so you might need to implement a method to properly disable the teleportation.
-                teleportScript = nil
-            end
+            -- Disable teleportation
+            disableTeleport()
         end
     end
 })
