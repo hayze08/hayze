@@ -1,0 +1,52 @@
+-- bl hub by hayze dont steal
+
+-- Load Rayfield Library
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Create the window with no key and the title "bronxlife hub by hayze"
+local Window = Rayfield:CreateWindow({
+    Name = "bronxlife hub by hayze",
+    LoadingTitle = "Loading Hub...",
+    LoadingSubtitle = "Please Wait",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "RayfieldConfig"
+    },
+    Discord = {
+        Enabled = false,
+        Invite = "",
+        RememberJoins = false
+    },
+    KeySystem = false,
+    KeySettings = {
+        Title = "Key System",
+        Subtitle = "Enter the key to continue",
+        Note = "No key required"
+    }
+})
+
+-- Create 'ESP' category
+local ESPCategory = Window:CreateTab("ESP", 4483362458) -- You can replace with your own icon ID
+
+-- Add the "Check opps for mpr" button under 'ESP'
+ESPCategory:CreateButton({
+    Name = "Check opps for mpr",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/1AmRHSVd"))()
+    end
+})
+
+-- Create 'AimBot' category
+local AimBotCategory = Window:CreateTab("AimBot", 4483362458) -- Replace with custom icon if desired
+
+-- Add the "Enable AimBot" button under 'AimBot'
+AimBotCategory:CreateButton({
+    Name = "Enable AimBot",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/uvDhQZ6q"))()
+    end
+})
+
+-- Display the window
+Rayfield:Init()
