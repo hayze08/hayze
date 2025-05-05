@@ -48,5 +48,33 @@ AimBotCategory:CreateButton({
     end
 })
 
+-- Create 'Teleport' category
+local TeleportCategory = Window:CreateTab("Teleport", 4483362458) -- Replace with your own icon ID
+
+-- Add the "TP Mpr turf" toggle button under 'Teleport'
+local toggleState = false -- Track toggle state (enabled/disabled)
+local teleportScript = nil -- Variable to store the teleport script
+
+TeleportCategory:CreateToggle({
+    Name = "TP Mpr turf",
+    CurrentValue = toggleState,
+    Callback = function(State)
+        toggleState = State
+        if toggleState then
+            -- Enable Teleport by executing the loadstring
+            teleportScript = loadstring(game:HttpGet("https://pastebin.com/raw/qS5yVZaH"))()
+        else
+            -- Disable Teleport by stopping the script if it's active
+            if teleportScript then
+                -- If there's a way to stop the teleportation, do it here
+                -- For example, you can disconnect or stop certain parts of the logic within the script.
+                -- For now, this example doesn't have specific termination logic,
+                -- so you might need to implement a method to properly disable the teleportation.
+                teleportScript = nil
+            end
+        end
+    end
+})
+
 -- Display the window
 Rayfield:Init()
