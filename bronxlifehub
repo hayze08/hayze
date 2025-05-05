@@ -57,7 +57,7 @@ local teleportScript -- Variable to store the teleportation script
 
 -- Function to execute the teleportation script
 local function enableTeleport()
-    teleportScript = loadstring(game:HttpGet("https://pastebin.com/raw/MnWT8ffi")()
+    teleportScript = loadstring(game:HttpGet("https://pastebin.com/raw/MnWT8ffi"))()
 
 -- Function to disable the teleportation script
 local function disableTeleport()
