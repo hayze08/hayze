@@ -1,5 +1,7 @@
 -- bl hub by hayze dont steal 
 
+-- loadstring version >>> loadstring(game:HttpGet("https://raw.githubusercontent.com/hayze08/hayze/refs/heads/main/bronxlifehub"))()
+
 -- Load Rayfield Library
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
